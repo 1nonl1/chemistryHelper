@@ -8,12 +8,12 @@ To install this repository, follow these steps:
 
 1. Clone the repository from GitHub:
     ```
-    git clone https://github.com/your-username/your-repository-name.git
+    git clone https://github.com/1nonl1/chemistryHelper.git
     ```
 
 2. Navigate to the project directory:
     ```
-    cd your-repository-name
+    cd chemistryHelper
     ```
 
 3. Create a virtual environment (optional but recommended):
@@ -38,7 +38,8 @@ To install this repository, follow these steps:
 
 ## Running the Program
 
-To run the program, execute the following command:
+To run the program, execute the following command
+(Make sure you are in the correct directory!!!):
 ```
 python main.py
 ```
