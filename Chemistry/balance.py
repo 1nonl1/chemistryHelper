@@ -36,10 +36,10 @@ def findElements(segment,index, multiplier, side):
                 addToMatrix(elementsAndNumbers[i], index, multiplier, side)        
     
 def compoundDecipher(compound, index, side):
-    segments=re.split('(\([A-Za-z0-9]*\)[0-9]*)',compound)    
+    segments=re.split(r'(\([A-Za-z0-9]*\)[0-9]*)',compound)    
     for segment in segments:
         if segment.startswith("("):
-            segment=re.split('\)([0-9]*)',segment)
+            segment=re.split(r'\)([0-9]*)',segment)
             multiplier=int(segment[1])
             segment=segment[0][1:]
         else:
