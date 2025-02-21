@@ -9,7 +9,9 @@ def main():
         ask = input("What element or compuound do you want to choose (Should look like this [Al2O3])? ")
         element = Substance.from_formula(ask)
         if element:
-            print(element)
+            print("Molecular Weight:", element.mass) 
+            print("Composition:", element.composition) 
+            print("Unicode Name:", element.unicode_name) 
         else:
             print("Element not found.")
     elif c1 == "c":
