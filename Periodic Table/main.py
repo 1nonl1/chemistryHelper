@@ -1,4 +1,5 @@
 import eledata
+import subprocess
 
 def main():
     print("Welcome to the element reference and calculator!")
@@ -15,8 +16,15 @@ def main():
         from equations import conversions
         conversions()
     elif c1 == "e":
-        print("This feature is not yet available.")
-        print("If you have any sugestions please say so in the discussions tab.")
+        balask = input("Do you want to balance the equation or predict products or both? (b/p/both): ")
+        if balask == "b":
+            subprocess.call(["python", "balance.py"])
+        elif balask == "p":
+            print("This feature is not yet available.")
+            print("If you have any sugestions please say so in the discussions tab in the github page.")
+        elif balask == "both":
+            print("This feature is not yet available.")
+            print("If you have any sugestions please say so in the discussions tab in the github page.")
     else:
         print("Invalid input.")     
 
