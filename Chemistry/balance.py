@@ -23,4 +23,5 @@ def balance():
         products_str = " + ".join(f"{v}{k}" for k, v in prod.items())
         print(f"Balanced Equation: {reactants_str} -> {products_str}")
     except ValueError as e:
-        print(f"Error balancing equation: {e}")
+        print(f"Error balancing equation: {e}") 
+balance()
