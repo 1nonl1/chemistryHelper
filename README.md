@@ -1,6 +1,7 @@
 # ChemistryHelper 
 
 This repository contains a Python program that serves as an element reference and calculator. The program allows users to look up information about elements, perform conversions, and solve chemical equations. Please note that this program is still under development, and any suggestions are greatly appreciated.
+**NOTE!!! The structure diagram only works well for some compounds, others it doesn't print the structure and just the chemical equation!**
 
 ## Installation
 
