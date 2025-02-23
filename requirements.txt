@@ -2,5 +2,4 @@ chempy==0.9.0
 pandas==2.2.3
 sym==0.3.5
 sympy==1.13.1
-referencing==0.35.1
-requests==2.32.3
+PubChemPy==1.0.4
