@@ -24,9 +24,6 @@ def balance():
         print(f"Balanced Equation: {reactants_str} -> {products_str}")
         
         # Print product names below the formula
-        print("\nProduct Names:")
-        for product in products:
-            print(product.name)
     except ValueError as e:
         print(f"Error balancing equation: {e}") 
 
