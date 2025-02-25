@@ -16,6 +16,7 @@ def balance():
 
     reactant_names = [reactant.name for reactant in reactants]
     product_names = [product.name for product in products]
+    print(reactant_names, " + ", product_names)
 
     try:
         reac, prod = balance_stoichiometry(set(reactant_names), set(product_names))
