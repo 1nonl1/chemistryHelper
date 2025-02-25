@@ -24,7 +24,13 @@ for i in range(num_reactants):
     compound = input(f"Please enter symbol or compound for reactant {i + 1}: ")
     reacnames.append(compound)
     reactant_elements.extend(extract_elements(compound))
-
+print(reacnames)
+print("Extracted elements:", reactant_elements)
+reactant_elements[1], reactant_elements[3] = reactant_elements[3], reactant_elements[1]
+print("Reordered elements:", reactant_elements)
+merge = [(0,2),(2,4)]
+products = [''.join(reactant_elements[start:end]) for start, end in merge]
+print(products)
 if len(reactant_elements) < 2:
     print("Please enter at least two elements.")
 else:
@@ -34,7 +40,7 @@ else:
     charges1 = [_.charge for _ in e1.ionic_radii]
     charges2 = [_.charge for _ in e2.ionic_radii]
 
-    if charges1[0] == charges2[0]:
+"""    if charges1[0] == charges2[0]:
         elements = sorted([e1.symbol, e2.symbol])
         elements_with_charges = []
         if elements[0] == e1.symbol:
@@ -50,6 +56,7 @@ else:
         elements_with_charges = [item for item in elements_with_charges if item != '1']
         
         sorted_elements = ''.join(elements_with_charges)
+        print(f"['{sorted_elements}'] is the product.")
         
     else:
         elements = sorted([e1.symbol, e2.symbol])
@@ -66,9 +73,10 @@ else:
             elements_with_charges.append(str(abs(charges2[0])))
         elements_with_charges = [item for item in elements_with_charges if item != '1']
         sorted_elements = ''.join(elements_with_charges)
+        print(f"['{sorted_elements}'] is the product.")"""
         
 
-reac, prod = balance_stoichiometry(set(reacnames), set([sorted_elements]))
+reac, prod = balance_stoichiometry(set(reacnames), set(products))
 reactants_str = " + ".join(f"{v}{k}" for k, v in reac.items())
-products_str = "".join(f"{v}{k}" for k, v in prod.items())
+products_str = " + ".join(f"{v}{k}" for k, v in prod.items())
 print(f"Balanced Equation: {reactants_str} -> {products_str}")
