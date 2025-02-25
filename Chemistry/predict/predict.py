@@ -6,3 +6,5 @@ def balance():
         subprocess.call("python Chemistry/predict/synthesis.py")
     elif ask == "d":
         subprocess.call("python Chemistry/predict/decomposition.py")
+    elif ask == "dd":
+        subprocess.call("python Chemistry/predict/double_displacement.py")
