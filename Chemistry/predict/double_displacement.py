@@ -31,51 +31,24 @@ print("Reordered elements:", reactant_elements)
 merge = [(0,2),(2,4)]
 products = [''.join(reactant_elements[start:end]) for start, end in merge]
 print(products)
+
 if len(reactant_elements) < 2:
     print("Please enter at least two elements.")
 else:
     e1 = element(reactant_elements[0])
     e2 = element(reactant_elements[1])
+    e3 = element(reactant_elements[2])
+    e4 = element(reactant_elements[3])
 
     charges1 = [_.charge for _ in e1.ionic_radii]
     charges2 = [_.charge for _ in e2.ionic_radii]
-
-"""    if charges1[0] == charges2[0]:
-        elements = sorted([e1.symbol, e2.symbol])
-        elements_with_charges = []
-        if elements[0] == e1.symbol:
-            elements_with_charges.append(elements[0])
-            elements_with_charges.append(str(abs(charges2[0])))
-            elements_with_charges.append(elements[1])
-            elements_with_charges.append(str(abs(charges1[0])))
-        else:
-            elements_with_charges.append(elements[0])
-            elements_with_charges.append(str(abs(charges1[0])))
-            elements_with_charges.append(elements[1])
-            elements_with_charges.append(str(abs(charges2[0])))
-        elements_with_charges = [item for item in elements_with_charges if item != '1']
-        
-        sorted_elements = ''.join(elements_with_charges)
-        print(f"['{sorted_elements}'] is the product.")
-        
-    else:
-        elements = sorted([e1.symbol, e2.symbol])
-        elements_with_charges = []
-        if elements[0] == e1.symbol:
-            elements_with_charges.append(elements[0])
-            elements_with_charges.append(str(abs(charges2[0])))
-            elements_with_charges.append(elements[1])
-            elements_with_charges.append(str(abs(charges1[0])))
-        else:
-            elements_with_charges.append(elements[0])
-            elements_with_charges.append(str(abs(charges1[0])))
-            elements_with_charges.append(elements[1])
-            elements_with_charges.append(str(abs(charges2[0])))
-        elements_with_charges = [item for item in elements_with_charges if item != '1']
-        sorted_elements = ''.join(elements_with_charges)
-        print(f"['{sorted_elements}'] is the product.")"""
-        
-
+    charges3 = [_.charge for _ in e3.ionic_radii]
+    charges4 = [_.charge for _ in e4.ionic_radii]
+    print(charges1[0], " + ", charges2[0], " + ", charges3[0], " + ", charges4[0])
+products = [reactant_elements[0], str(abs(charges2[0])), reactant_elements[1], str(abs(charges1[0])), reactant_elements[2], str(abs(charges4[0])), reactant_elements[3], str(abs(charges3[0]))]
+merge2 = [(0,4),(4,8)]
+products = [''.join(products[start:end]) for start, end in merge2]
+print(products)
 reac, prod = balance_stoichiometry(set(reacnames), set(products))
 reactants_str = " + ".join(f"{v}{k}" for k, v in reac.items())
 products_str = " + ".join(f"{v}{k}" for k, v in prod.items())
