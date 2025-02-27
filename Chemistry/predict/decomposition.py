@@ -5,10 +5,8 @@ from mendeleev import element
 from mendeleev.ion import Ion
 
 def extract_elements(compound):
-    # Regular expression to match element symbols
     return re.findall(r'[A-Z][a-z]*', compound)
 
-# Ask for the product
 product = []
 product_compound = input("Please enter the product symbol or compound: ")
 product.append(product_compound)

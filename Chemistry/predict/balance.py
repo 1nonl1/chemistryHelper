@@ -23,8 +23,6 @@ def balance():
         reactants_str = " + ".join(f"{v}{k}" for k, v in reac.items())
         products_str = " + ".join(f"{v}{k}" for k, v in prod.items())
         print(f"Balanced Equation: {reactants_str} -> {products_str}")
-        
-        # Print product names below the formula
     except ValueError as e:
         print(f"Error balancing equation: {e}") 
 

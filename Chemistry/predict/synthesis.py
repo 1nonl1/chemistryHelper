@@ -5,7 +5,6 @@ from mendeleev import element
 from mendeleev.ion import Ion
 
 def extract_elements(compound):
-    # Regular expression to match element symbols
     return re.findall(r'[A-Z][a-z]*', compound)
 
 while True:

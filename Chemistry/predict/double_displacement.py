@@ -4,8 +4,8 @@ from chempy.chemistry import balance_stoichiometry
 from mendeleev import element
 from mendeleev.ion import Ion
 
-def extract_elements(compound):
-    # Regular expression to match element symbols
+polypresent = False
+def extract_elements(compound):    
     return re.findall(r'[A-Z][a-z]*', compound)
 
 while True:
@@ -19,9 +19,16 @@ while True:
         print("Please enter a valid number.")
 
 reactant_elements = []
+poly = ["OH", "NO3", "SO4", "CO3", "PO4", "NH4", "H3O", "HSO4", "H2PO4", "HPO4", "HSO3", "HCO3", "HNO2", "H2O2", "O2", "CN", "SCN", "MnO4", "Cr2O7", "CrO4", "AsO4", "AsO3", "VO3", "VO4", "SeO4", "SeO3", "TeO4", "TeO3", "ClO", "ClO2", "ClO3", "ClO4", "BrO", "BrO2", "BrO3", "BrO4", "IO", "IO2", "IO3", "IO4"]
 reacnames = []
 for i in range(num_reactants):
+    n = 0
+    polyions = []
     compound = input(f"Please enter symbol or compound for reactant {i + 1}: ")
+    for polyion in poly:
+        if polyion in compound:
+            polyions.append(polyion)
+            polypresent = True
     reacnames.append(compound)
     reactant_elements.extend(extract_elements(compound))
 print(reacnames)
